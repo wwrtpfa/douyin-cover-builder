@@ -1,0 +1,34 @@
+# 使用方法（最短路径）
+
+/douyin-cover-builder
+
+## 输入模板
+- 主题：一句话说明这期讲什么
+- 关键点：可多可少，写你希望出现的核心概念/元素
+- 人物气质：右下角人物状态与姿势
+- 画幅：竖版 4:3（或横版 4:3）
+
+## 实际使用示例
+- 主题：Ai全自动整理笔记
+- 关键点：龙虾机器人全自动整理我电脑中的笔记
+- 人物气质：右下角我本人，自信微笑，手指指向龙虾机器人
+- 画幅：竖版 严格 4:3
+
+上传你的照片（推荐）。
+
+你会得到（Output）：
+- 最终提示词 Final Prompt（包含：关键词高亮配色、关键词轻弧排版、主题自适应配色背景）
+- 创意说明 Art Direction Brief（告诉你这次是如何“自由发挥”的）
+
+生成提示词后，技能会优先调用已安装的 API Image 后端直接生成图片；也可以把提示词复制到其他生图模型。
+
+默认成品输出：
+
+- `cover-3x4.png`：1024x1536 请求尺寸，3:4
+- `cover-4x3.png`：1536x1024 请求尺寸，4:3
+- `cover-manifest.json`：输入、标题、后端、尺寸和状态
+
+API Image 的脚本会从 `${CODEX_HOME:-$HOME}/skills/api-image-main` 或 `${CODEX_HOME:-$HOME}/skills/api-image` 自动发现。鉴权配置不属于本仓库，详见 [`../references/api-image-backend.md`](../references/api-image-backend.md)。
+
+更多示例与前后对比图：
+- https://github.com/0x00000003/douyin-cover-builder
